@@ -83,4 +83,10 @@ function twoSum(nums: number[], target: number): number[] {
 //   0   2         7      no              {2 → 0}
 //   1   7         2      yes, index 0    → return [0, 1]
 
+// ── quick tests ──────────────────────────────────────────────
+console.log(twoSum([2, 7, 11, 15], 9));    // [0, 1]
+console.log(twoSum([3, 2, 4], 6));         // [1, 2]
+console.log(twoSum([3, 3], 6));            // [0, 1]
+console.log(twoSum([2, 7, 11, 15], 26));   // [2, 3]  ← the case that caught the loop bug
+
 export { twoSum, twoSumBruteForce };

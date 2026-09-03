@@ -77,4 +77,8 @@ function containsDuplicateSorted(nums: number[]): boolean {
 // but naming what each option costs and why you'd pick one given constraints.
 // ─────────────────────────────────────────────────────────────
 
+console.log(containsDuplicate([1, 2, 3, 1]));   // true
+console.log(containsDuplicate([1, 2, 3, 4]));   // false
+console.log(containsDuplicate([3, 3]));         // true
+console.log(containsDuplicate([]));             // false
 export { containsDuplicate, containsDuplicateSorted };
