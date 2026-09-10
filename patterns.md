@@ -126,3 +126,49 @@ Two sentences to have ready:
 > "Brute force is O(n²) time, O(1) space. The hash map is O(n) time, O(n) space. I traded memory for speed, which is right here because n can be 10⁴."
 
 > "The Set is O(n) time but O(n) space. Sorting is O(n log n) time but O(1) space if I can mutate. I'd pick the Set unless memory is constrained."
+---
+
+# Pattern Recognition — Read the problem before writing code
+
+> Full worked examples → `leetcode/pattern-recognition-examples.ts`
+
+## The process (in order)
+
+1. **Restate the problem in one sentence.** If you can't, you haven't understood it yet.
+2. **Scan for keyword signals.** Certain words almost always map to a pattern.
+3. **Sketch brute force — shape only, not code.** What would the naive solution do?
+4. **Find the bottleneck.** Which part is slow, and why?
+5. **Match the bottleneck to a pattern.** The slow part tells you what structure removes it.
+
+## Keyword signals
+
+| Signal in the problem                          | Pattern to reach for        |
+|------------------------------------------------|-----------------------------|
+| find a pair / "have I seen this before?"       | Hash map / Set              |
+| any duplicates / membership check              | Set                         |
+| sorted array, find two values                  | Two pointers                |
+| contiguous subarray / substring, max/min/sum   | Sliding window              |
+| all combinations / permutations / subsets      | Backtracking                |
+| optimal substructure / "number of ways"        | Dynamic programming         |
+| tree / graph, level by level                   | BFS                         |
+| tree / graph, go deep first                    | DFS                         |
+
+> This table grows with you. Add a row every time you learn a new pattern.
+
+## The bottleneck tells you the structure
+
+| Bottleneck in brute force                      | Structure that removes it   |
+|------------------------------------------------|-----------------------------|
+| Inner loop asking "have I seen x?"             | Hash map / Set → O(1) lookup|
+| Comparing every pair in a sorted array         | Two pointers → move inward  |
+| Recomputing the same subarray sum              | Sliding window → slide once |
+
+## Brute force sketch — what to look for
+
+```
+nested loop → "have I seen x?"     → hash map
+nested loop → two indices moving   → two pointers
+recomputing overlapping work       → sliding window / DP
+trying every possibility           → backtracking
+```
+
