@@ -1,0 +1,13 @@
+{
+  "name": "upskill",
+  "version": "1.0.0",
+  "description": "Learning projects - TypeScript, Node.js, Angular, Web APIs",
+  "scripts": {
+    "dev": "ts-node"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.0.0",
+    "@types/node": "^22.0.0"
+  }
+}

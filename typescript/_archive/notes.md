@@ -31,3 +31,17 @@ When a variable could be multiple types, TypeScript won't let you use type-speci
 
 <!-- Add the next topic here -->
 
+
+## 3. Classes & Constructors
+File: `classes-and-constructors.ts`
+Rule: A keyword before a constructor parameter (`public`/`private`/`protected`/`readonly`) turns it into a stored property automatically. No keyword = local variable only, gone after the constructor finishes.
+
+**Interview answer:**
+"TypeScript's constructor parameter shorthand lets you declare and initialise a class property in one place. I use `public` for values callers need, `private` to hide implementation details, `protected` for things subclasses need, and `readonly` for IDs or values that must never change after creation. Without a keyword, the parameter is just a local variable — it isn't stored on the object."
+
+**In simple words:**
+Normally you'd write: `this.name = name` in the constructor body. TypeScript lets you skip that boilerplate — add `public` (or another keyword) to the parameter and it does that for you. The key question is always: *does this value live on the object after the constructor?* With a keyword: yes. Without: no. That's exactly why `AppError` writes `public code: string, message: string` — `code` is stored on the error, `message` is just passed up to `super()` and stored there by the built-in `Error` class instead.
+
+---
+
+<!-- Add the next topic here -->

@@ -1,0 +1,12 @@
+{
+  "users": [
+    { "id": 1, "name": "Pramod Patil", "email": "pramod@example.com", "role": "admin" },
+    { "id": 2, "name": "Anil Sharma", "email": "anil@example.com", "role": "user" },
+    { "id": 3, "name": "Sneha Kulkarni", "email": "sneha@example.com", "role": "user" }
+  ],
+  "posts": [
+    { "id": 1, "userId": 1, "title": "Getting started with TypeScript", "body": "TypeScript adds types to JavaScript..." },
+    { "id": 2, "userId": 1, "title": "Understanding Fetch API", "body": "The fetch API is promise-based..." },
+    { "id": 3, "userId": 2, "title": "Node.js best practices", "body": "Here are some best practices..." }
+  ]
+}
